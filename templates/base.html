@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ t.site_name if t.site_name else 'سایت' }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+    <div class="lang">
+      <a href="/setlang/fa">فارسی</a> | <a href="/setlang/en">English</a>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+</html>
