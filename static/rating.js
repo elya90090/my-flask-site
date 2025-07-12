@@ -1,0 +1,13 @@
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.stars').forEach(box=>{
+    box.querySelectorAll('.star').forEach((star,idx)=>{
+      star.addEventListener('click',()=>{
+        fetch('/vote',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({item_id:box.dataset.id,rating:idx+1})
+        }).then(()=>location.reload());
+      });
+    });
+  });
+});
